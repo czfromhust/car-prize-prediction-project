@@ -1,6 +1,4 @@
-fastapi==0.95.1curl -X POST "http://localhost:8000/predict" \
--H "Content-Type: application/json" \
--d '{"Manufacturer": "TOYOTA”, "Model": "Camry", "Category": "Sedan", "Leather_interior": "Yes", "Fuel_type": "Petrol", "Gear_box_type": "Automatic", "Drive_wheels": "Front", "Doors": 4, "Wheel": "Left", "Color": "Black", "Levy": 1200, "Prod_year": 2018, "Engine_volume": 2.5, "Cylinders": 4, "Airbags": 8, "Mileage": 25000}'
+fastapi==0.95.1
 uvicorn==0.22.0
 pandas==1.5.3
 numpy==1.24.3
