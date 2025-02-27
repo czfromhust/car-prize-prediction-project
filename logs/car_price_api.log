@@ -1,0 +1,214 @@
+2025-02-27 18:17:20,522 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'Camry'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Automatic'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '04-May'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 2.5}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:17:20,527 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:17:20,527 - car_price_api - INFO - 处理后的 Model: ['camry']
+2025-02-27 18:17:20,528 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:17:20,528 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:17:20,529 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:17:20,530 - car_price_api - INFO - 处理后的 Gear box type: ['automatic']
+2025-02-27 18:17:20,531 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:17:20,531 - car_price_api - INFO - 处理后的 Doors: ['04-may']
+2025-02-27 18:17:20,531 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:17:20,532 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:17:20,559 - car_price_api - INFO - 预测价格: 30780.773930615665
+2025-02-27 18:29:38,483 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'Camry'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Automatic'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 2.5}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:29:38,488 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:29:38,489 - car_price_api - INFO - 处理后的 Model: ['camry']
+2025-02-27 18:29:38,490 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:29:38,490 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:29:38,491 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:29:38,492 - car_price_api - INFO - 处理后的 Gear box type: ['automatic']
+2025-02-27 18:29:38,493 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:29:38,493 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:29:38,494 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:29:38,494 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:29:38,498 - car_price_api - WARNING - 特征 Doors 的值 '2' 不在训练数据中，使用默认值代替
+2025-02-27 18:29:38,499 - car_price_api - ERROR - 编码错误在特征 Doors 上: y contains previously unseen labels: 1
+2025-02-27 18:29:44,884 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'Camry'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Automatic'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 2.5}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:29:44,887 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:29:44,888 - car_price_api - INFO - 处理后的 Model: ['camry']
+2025-02-27 18:29:44,889 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:29:44,890 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:29:44,890 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:29:44,891 - car_price_api - INFO - 处理后的 Gear box type: ['automatic']
+2025-02-27 18:29:44,891 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:29:44,891 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:29:44,892 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:29:44,892 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:29:44,893 - car_price_api - WARNING - 特征 Doors 的值 '2' 不在训练数据中，使用默认值代替
+2025-02-27 18:29:44,894 - car_price_api - ERROR - 编码错误在特征 Doors 上: y contains previously unseen labels: 1
+2025-02-27 18:29:57,484 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'Camry'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Automatic'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '3'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 2.5}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:29:57,487 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:29:57,488 - car_price_api - INFO - 处理后的 Model: ['camry']
+2025-02-27 18:29:57,488 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:29:57,488 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:29:57,489 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:29:57,489 - car_price_api - INFO - 处理后的 Gear box type: ['automatic']
+2025-02-27 18:29:57,490 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:29:57,490 - car_price_api - INFO - 处理后的 Doors: ['3']
+2025-02-27 18:29:57,491 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:29:57,492 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:29:57,495 - car_price_api - WARNING - 特征 Doors 的值 '3' 不在训练数据中，使用默认值代替
+2025-02-27 18:29:57,495 - car_price_api - ERROR - 编码错误在特征 Doors 上: y contains previously unseen labels: 1
+2025-02-27 18:31:00,178 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Automatic'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 2.5}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:31:00,181 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:31:00,181 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:31:00,182 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:31:00,182 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:31:00,182 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:31:00,182 - car_price_api - INFO - 处理后的 Gear box type: ['automatic']
+2025-02-27 18:31:00,183 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:31:00,183 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:31:00,184 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:31:00,184 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:31:00,185 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用默认值代替
+2025-02-27 18:31:00,186 - car_price_api - ERROR - 编码错误在特征 Model 上: y contains previously unseen labels: 1038
+2025-02-27 18:42:00,138 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Automatic'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 2.5}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:00,145 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:00,145 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:00,146 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:00,146 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:00,147 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:00,147 - car_price_api - INFO - 处理后的 Gear box type: ['automatic']
+2025-02-27 18:42:00,148 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:42:00,148 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:42:00,149 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:42:00,149 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:00,152 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:00,154 - car_price_api - WARNING - 特征 Doors 的值 '2' 不在训练数据中，使用 '02-mar' 替代
+2025-02-27 18:42:00,181 - car_price_api - INFO - 预测价格: 30453.50230110631
+2025-02-27 18:42:25,786 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Automatic'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 2.5}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:25,795 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:25,796 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:25,801 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:25,802 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:25,804 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:25,804 - car_price_api - INFO - 处理后的 Gear box type: ['automatic']
+2025-02-27 18:42:25,805 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:42:25,805 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:42:25,806 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:42:25,806 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:25,813 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:25,824 - car_price_api - WARNING - 特征 Doors 的值 '2' 不在训练数据中，使用 '02-mar' 替代
+2025-02-27 18:42:25,869 - car_price_api - INFO - 预测价格: 30453.50230110631
+2025-02-27 18:42:28,099 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Tiptronic'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 2.5}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:28,102 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:28,103 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:28,103 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:28,103 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:28,103 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:28,104 - car_price_api - INFO - 处理后的 Gear box type: ['tiptronic']
+2025-02-27 18:42:28,104 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:42:28,104 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:42:28,105 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:42:28,105 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:28,106 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:28,109 - car_price_api - WARNING - 特征 Doors 的值 '2' 不在训练数据中，使用 '02-mar' 替代
+2025-02-27 18:42:28,175 - car_price_api - INFO - 预测价格: 32749.409609908605
+2025-02-27 18:42:30,810 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Variator'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 2.5}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:30,816 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:30,818 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:30,820 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:30,820 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:30,821 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:30,821 - car_price_api - INFO - 处理后的 Gear box type: ['variator']
+2025-02-27 18:42:30,822 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:42:30,822 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:42:30,823 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:42:30,823 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:30,824 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:30,830 - car_price_api - WARNING - 特征 Doors 的值 '2' 不在训练数据中，使用 '02-mar' 替代
+2025-02-27 18:42:30,854 - car_price_api - INFO - 预测价格: 32715.262054353054
+2025-02-27 18:42:38,872 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Variator'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 8.0}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:38,875 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:38,875 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:38,876 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:38,876 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:38,876 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:38,877 - car_price_api - INFO - 处理后的 Gear box type: ['variator']
+2025-02-27 18:42:38,877 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:42:38,877 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:42:38,878 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:42:38,878 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:38,879 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:38,882 - car_price_api - WARNING - 特征 Doors 的值 '2' 不在训练数据中，使用 '02-mar' 替代
+2025-02-27 18:42:38,911 - car_price_api - INFO - 预测价格: 31777.97095117846
+2025-02-27 18:42:40,233 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Variator'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 8.0}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:40,235 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:40,236 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:40,237 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:40,238 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:40,239 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:40,239 - car_price_api - INFO - 处理后的 Gear box type: ['variator']
+2025-02-27 18:42:40,240 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:42:40,240 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:42:40,241 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:42:40,241 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:40,241 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:40,243 - car_price_api - WARNING - 特征 Doors 的值 '2' 不在训练数据中，使用 '02-mar' 替代
+2025-02-27 18:42:40,250 - car_price_api - INFO - 预测价格: 31777.97095117846
+2025-02-27 18:42:42,750 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Variator'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '2'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 6.0}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:42,755 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:42,755 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:42,756 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:42,757 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:42,757 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:42,757 - car_price_api - INFO - 处理后的 Gear box type: ['variator']
+2025-02-27 18:42:42,758 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:42:42,758 - car_price_api - INFO - 处理后的 Doors: ['2']
+2025-02-27 18:42:42,758 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:42:42,759 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:42,763 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:42,765 - car_price_api - WARNING - 特征 Doors 的值 '2' 不在训练数据中，使用 '02-mar' 替代
+2025-02-27 18:42:42,785 - car_price_api - INFO - 预测价格: 31777.97095117846
+2025-02-27 18:42:47,063 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Variator'}, 'Drive wheels': {0: 'Front'}, 'Doors': {0: '04-May'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 6.0}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:47,065 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:47,066 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:47,067 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:47,068 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:47,069 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:47,070 - car_price_api - INFO - 处理后的 Gear box type: ['variator']
+2025-02-27 18:42:47,070 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 18:42:47,071 - car_price_api - INFO - 处理后的 Doors: ['04-may']
+2025-02-27 18:42:47,071 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:42:47,071 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:47,072 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:47,081 - car_price_api - INFO - 预测价格: 31810.376506734017
+2025-02-27 18:42:50,029 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Variator'}, 'Drive wheels': {0: '4x4'}, 'Doors': {0: '04-May'}, 'Wheel': {0: 'Left wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 6.0}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:50,032 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:50,033 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:50,034 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:50,035 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:50,037 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:50,038 - car_price_api - INFO - 处理后的 Gear box type: ['variator']
+2025-02-27 18:42:50,039 - car_price_api - INFO - 处理后的 Drive wheels: ['4x4']
+2025-02-27 18:42:50,040 - car_price_api - INFO - 处理后的 Doors: ['04-may']
+2025-02-27 18:42:50,040 - car_price_api - INFO - 处理后的 Wheel: ['left wheel']
+2025-02-27 18:42:50,041 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:50,042 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:50,054 - car_price_api - INFO - 预测价格: 31803.833332130842
+2025-02-27 18:42:53,009 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'TOYOTA'}, 'Model': {0: 'cat'}, 'Category': {0: 'Sedan'}, 'Leather interior': {0: 'Yes'}, 'Fuel type': {0: 'Petrol'}, 'Gear box type': {0: 'Variator'}, 'Drive wheels': {0: '4x4'}, 'Doors': {0: '04-May'}, 'Wheel': {0: 'Right wheel'}, 'Color': {0: 'Black'}, 'Levy': {0: 1200.0}, 'Engine volume': {0: 6.0}, 'Cylinders': {0: 4}, 'Airbags': {0: 8}, 'Mileage': {0: 25000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 18:42:53,012 - car_price_api - INFO - 处理后的 Manufacturer: ['toyota']
+2025-02-27 18:42:53,013 - car_price_api - INFO - 处理后的 Model: ['cat']
+2025-02-27 18:42:53,014 - car_price_api - INFO - 处理后的 Category: ['sedan']
+2025-02-27 18:42:53,014 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 18:42:53,015 - car_price_api - INFO - 处理后的 Fuel type: ['petrol']
+2025-02-27 18:42:53,016 - car_price_api - INFO - 处理后的 Gear box type: ['variator']
+2025-02-27 18:42:53,016 - car_price_api - INFO - 处理后的 Drive wheels: ['4x4']
+2025-02-27 18:42:53,017 - car_price_api - INFO - 处理后的 Doors: ['04-may']
+2025-02-27 18:42:53,017 - car_price_api - INFO - 处理后的 Wheel: ['right wheel']
+2025-02-27 18:42:53,018 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 18:42:53,018 - car_price_api - WARNING - 特征 Model 的值 'cat' 不在训练数据中，使用 '09-mar' 替代
+2025-02-27 18:42:53,020 - car_price_api - WARNING - 特征 Wheel 的值 'right wheel' 不在训练数据中，使用 'left wheel' 替代
+2025-02-27 18:42:53,027 - car_price_api - INFO - 预测价格: 31803.833332130842
+2025-02-27 19:06:32,978 - car_price_api - INFO - 输入数据: {'Manufacturer': {0: 'acura'}, 'Model': {0: '09-mar'}, 'Category': {0: 'cabriolet'}, 'Leather interior': {0: 'yes'}, 'Fuel type': {0: 'diesel'}, 'Gear box type': {0: 'tiptronic'}, 'Drive wheels': {0: 'front'}, 'Doors': {0: '02-mar'}, 'Wheel': {0: 'right-hand drive'}, 'Color': {0: 'black'}, 'Levy': {0: 10000.0}, 'Engine volume': {0: 8.0}, 'Cylinders': {0: 7}, 'Airbags': {0: 4}, 'Mileage': {0: 10000.0}, 'Prod. year': {0: 2018}}
+2025-02-27 19:06:32,982 - car_price_api - INFO - 处理后的 Manufacturer: ['acura']
+2025-02-27 19:06:32,983 - car_price_api - INFO - 处理后的 Model: ['09-mar']
+2025-02-27 19:06:32,983 - car_price_api - INFO - 处理后的 Category: ['cabriolet']
+2025-02-27 19:06:32,984 - car_price_api - INFO - 处理后的 Leather interior: ['yes']
+2025-02-27 19:06:32,984 - car_price_api - INFO - 处理后的 Fuel type: ['diesel']
+2025-02-27 19:06:32,985 - car_price_api - INFO - 处理后的 Gear box type: ['tiptronic']
+2025-02-27 19:06:32,985 - car_price_api - INFO - 处理后的 Drive wheels: ['front']
+2025-02-27 19:06:32,986 - car_price_api - INFO - 处理后的 Doors: ['02-mar']
+2025-02-27 19:06:32,986 - car_price_api - INFO - 处理后的 Wheel: ['right-hand drive']
+2025-02-27 19:06:32,986 - car_price_api - INFO - 处理后的 Color: ['black']
+2025-02-27 19:06:33,028 - car_price_api - INFO - 预测价格: 15834.418084859579

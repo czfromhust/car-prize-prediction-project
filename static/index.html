@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汽车价格预测</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .result-container {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: none;
+        }
+        .feature-importance {
+            margin-top: 15px;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+            display: none;
+        }
+        .select2-container {
+            width: 100% !important;
+        }
+        .debug-info {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">汽车价格预测系统</h1>
+        
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="alert alert-info" id="loadingStatus">
+                    正在加载特征数据...
+                </div>
+                
+                <form id="predictionForm" style="display:none;">
+                    <div class="row">
+                        <!-- 分类特征表单组 -->
+                        <div class="col-md-6">
+                            <h4>车辆基本信息</h4>
+                            
+                            <div class="form-group">
+                                <label for="Manufacturer">制造商</label>
+                                <select id="Manufacturer" name="Manufacturer" class="form-control category-select" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="Model">型号</label>
+                                <select id="Model" name="Model" class="form-control category-select" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="Category">类别</label>
+                                <select id="Category" name="Category" class="form-control category-select" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="Leather_interior">皮革内饰</label>
+                                <select id="Leather_interior" name="Leather_interior" class="form-control category-select" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="Fuel_type">燃料类型</label>
+                                <select id="Fuel_type" name="Fuel_type" class="form-control category-select" required></select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h4>技术参数</h4>
+                            
+                            <div class="form-group">
+                                <label for="Gear_box_type">变速箱类型</label>
+                                <select id="Gear_box_type" name="Gear_box_type" class="form-control category-select" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="Drive_wheels">驱动轮</label>
+                                <select id="Drive_wheels" name="Drive_wheels" class="form-control category-select" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="Doors">车门数</label>
+                                <select id="Doors" name="Doors" class="form-control category-select" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="Wheel">方向盘位置</label>
+                                <select id="Wheel" name="Wheel" class="form-control category-select" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="Color">颜色</label>
+                                <select id="Color" name="Color" class="form-control category-select" required></select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h4>数值参数</h4>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Prod_year">生产年份</label>
+                                <input type="number" id="Prod_year" name="Prod_year" class="form-control" min="1900" max="2025">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Engine_volume">发动机容量</label>
+                                <input type="number" id="Engine_volume" name="Engine_volume" class="form-control" step="0.1" min="0">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Cylinders">气缸数</label>
+                                <input type="number" id="Cylinders" name="Cylinders" class="form-control" min="0">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Airbags">安全气囊数</label>
+                                <input type="number" id="Airbags" name="Airbags" class="form-control" min="0">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Mileage">里程数</label>
+                                <input type="number" id="Mileage" name="Mileage" class="form-control" min="0">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Levy">征税额</label>
+                                <input type="number" id="Levy" name="Levy" class="form-control" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">预测价格</button>
+                    </div>
+                </form>
+                
+                <div class="loading">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                    <p>正在预测，请稍候...</p>
+                </div>
+                
+                <div class="error-message"></div>
+                
+                <div class="result-container">
+                    <h3 class="text-center">预测结果</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="text-center">预测价格: <span id="predictedPrice" class="text-primary"></span></h4>
+                            <div id="confidenceInterval" class="text-center"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-importance">
+                        <h5>特征重要性</h5>
+                        <div id="importanceChart"></div>
+                    </div>
+                </div>
+                
+                <!-- 调试信息区域 -->
+                <div class="debug-info">
+                    <h5>调试信息 <button id="toggleDebug" class="btn btn-sm btn-outline-secondary">显示/隐藏</button></h5>
+                    <div id="debugContent" style="display:none;">
+                        <pre id="apiResponse" class="bg-light p-3" style="max-height: 400px; overflow: auto;"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 脚本 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    
+    <script>
+        // 添加调试日志
+        function logDebug(title, data) {
+            console.log(title, data);
+            $('#apiResponse').append(`<strong>${title}</strong>: ${JSON.stringify(data, null, 2)}\n\n`);
+        }
+        
+        // 页面加载完成后执行初始化
+        $(document).ready(function() {
+            // 调试按钮事件
+            $('#toggleDebug').on('click', function() {
+                $('#debugContent').toggle();
+            });
+            
+            // 显示调试区域
+            $('.debug-info').show();
+            
+            // 获取特征有效值并填充下拉框
+            fetchFeatureValues();
+            
+            // 表单提交事件
+            $('#predictionForm').on('submit', function(e) {
+                e.preventDefault();
+                submitPrediction();
+            });
+        });
+        
+        // 获取所有特征的有效值
+        function fetchFeatureValues() {
+            // 显示加载状态
+            $('#loadingStatus').html(`<div class="spinner-border spinner-border-sm text-primary me-2" role="status"></div> 正在加载特征数据...`);
+            
+            fetch('/feature-values')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    logDebug('API 返回的原始数据', data);
+                    
+                    // 尝试解决字段映射问题
+                    const mappedData = mapFeatureNames(data);
+                    logDebug('映射后的数据', mappedData);
+                    
+                    // 填充下拉框
+                    populateDropdowns(mappedData);
+                    
+                    // 显示表单，隐藏加载状态
+                    $('#loadingStatus').hide();
+                    $('#predictionForm').show();
+                })
+                .catch(error => {
+                    logDebug('API 请求失败', error.message);
+                    $('#loadingStatus').html(`
+                        <div class="alert alert-danger">
+                            加载特征数据失败: ${error.message}
+                            <button class="btn btn-sm btn-outline-danger ms-3" onclick="fetchFeatureValues()">重试</button>
+                        </div>
+                    `);
+                });
+        }
+        
+        // 将后端特征名映射到前端ID
+        function mapFeatureNames(data) {
+            // 创建一个新对象来存储映射后的数据
+            const mappedData = {};
+            
+            // 可能的字段名变体
+            const fieldVariants = {
+                'Manufacturer': ['manufacturer', 'Manufacturer'],
+                'Model': ['model', 'Model'],
+                'Category': ['category', 'Category'],
+                'Leather interior': ['leather interior', 'Leather interior', 'leather_interior', 'Leather_interior'],
+                'Fuel type': ['fuel type', 'Fuel type', 'fuel_type', 'Fuel_type'],
+                'Gear box type': ['gear box type', 'Gear box type', 'gear_box_type', 'Gear_box_type'],
+                'Drive wheels': ['drive wheels', 'Drive wheels', 'drive_wheels', 'Drive_wheels'],
+                'Doors': ['doors', 'Doors'],
+                'Wheel': ['wheel', 'Wheel'],
+                'Color': ['color', 'Color']
+            };
+            
+            // 用于保存我们已经找到的字段
+            const foundFields = {};
+            
+            // 首先尝试直接匹配
+            for (const fieldKey in fieldVariants) {
+                const variants = fieldVariants[fieldKey];
+                
+                for (const variant of variants) {
+                    if (data[variant] !== undefined) {
+                        // 我们找到了一个匹配项
+                        const frontendKey = variant.replace(/ /g, '_');
+                        mappedData[frontendKey] = data[variant];
+                        foundFields[fieldKey] = true;
+                        logDebug(`字段映射: ${variant} -> ${frontendKey}`, data[variant].slice(0, 3));
+                        break;
+                    }
+                }
+            }
+            
+            // 记录未找到的字段
+            for (const fieldKey in fieldVariants) {
+                if (!foundFields[fieldKey]) {
+                    logDebug(`未找到字段: ${fieldKey}`, '尝试了这些变体: ' + fieldVariants[fieldKey].join(', '));
+                }
+            }
+            
+            // 记录可能是额外字段的内容
+            for (const key in data) {
+                let isKnownField = false;
+                for (const fieldKey in fieldVariants) {
+                    if (fieldVariants[fieldKey].includes(key)) {
+                        isKnownField = true;
+                        break;
+                    }
+                }
+                
+                if (!isKnownField) {
+                    logDebug(`发现未知字段: ${key}`, data[key].slice(0, 3));
+                    // 也添加到映射数据中
+                    mappedData[key.replace(/ /g, '_')] = data[key];
+                }
+            }
+            
+            return mappedData;
+        }
+        
+        // 填充所有下拉框
+        function populateDropdowns(featureValues) {
+            // 需要填充的字段及其显示名称
+            const fields = [
+                { id: 'Manufacturer', label: '制造商' },
+                { id: 'Model', label: '型号' },
+                { id: 'Category', label: '类别' },
+                { id: 'Leather_interior', label: '皮革内饰' },
+                { id: 'Fuel_type', label: '燃料类型' },
+                { id: 'Gear_box_type', label: '变速箱类型' },
+                { id: 'Drive_wheels', label: '驱动轮' },
+                { id: 'Doors', label: '车门数' },
+                { id: 'Wheel', label: '方向盘位置' },
+                { id: 'Color', label: '颜色' }
+            ];
+            
+            // 遍历每个字段并尝试填充
+            fields.forEach(field => {
+                const selectElement = $(`#${field.id}`);
+                if (selectElement.length === 0) {
+                    logDebug(`未找到选择框元素`, field.id);
+                    return;
+                }
+                
+                // 尝试找到对应的数据
+                const values = featureValues[field.id];
+                if (!values) {
+                    logDebug(`未找到字段的值数据`, field.id);
+                    selectElement.html('<option value="" disabled selected>无可用数据</option>');
+                    return;
+                }
+                
+                // 清空并添加选项
+                selectElement.empty();
+                selectElement.append('<option value="" selected disabled>请选择' + field.label + '</option>');
+                
+                // 添加所有选项
+                values.forEach(value => {
+                    selectElement.append(`<option value="${value}">${value}</option>`);
+                });
+                
+                logDebug(`已填充 ${field.id} 下拉框`, `${values.length} 个选项`);
+                
+                // 对选项数超过10个的下拉框应用select2
+                if (values.length > 10) {
+                    selectElement.select2({
+                        placeholder: '请选择或搜索' + field.label,
+                        allowClear: true
+                    });
+                    logDebug(`应用 Select2 到`, field.id);
+                }
+            });
+        }
+        
+        // 提交预测
+        function submitPrediction() {
+            // 显示加载状态，隐藏错误和结果
+            $('.loading').show();
+            $('.error-message').hide();
+            $('.result-container').hide();
+            
+            // 收集表单数据
+            const formData = {};
+            $('#predictionForm').serializeArray().forEach(item => {
+                formData[item.name] = item.value;
+            });
+            
+            // 处理数值字段
+            const numericFields = ['Prod_year', 'Engine_volume', 'Cylinders', 'Airbags', 'Mileage', 'Levy'];
+            numericFields.forEach(field => {
+                if (formData[field] !== undefined && formData[field] !== '') {
+                    // 转换为数值类型
+                    formData[field] = parseFloat(formData[field]);
+                }
+            });
+            
+            logDebug('提交的数据', formData);
+            
+            // 发送预测请求
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw new Error(err.detail || '预测请求失败');
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                // 隐藏加载状态
+                $('.loading').hide();
+                logDebug('预测结果', data);
+                
+                // 显示预测结果
+                displayResult(data);
+            })
+            .catch(error => {
+                $('.loading').hide();
+                logDebug('预测错误', error.message);
+                showError(error.message);
+            });
+        }
+        
+        // 显示预测结果
+        function displayResult(result) {
+            // 显示预测价格
+            $('#predictedPrice').text(result.predicted_price.toLocaleString('zh-CN') + '美金');
+            
+            // 显示置信区间（如果有）
+            if (false) {
+                const lower = result.confidence_interval.lower_bound.toLocaleString('zh-CN');
+                const upper = result.confidence_interval.upper_bound.toLocaleString('zh-CN');
+                $('#confidenceInterval').html(`<p>价格区间: ${lower} - ${upper} 元 (95% 置信区间)</p>`);
+            } else {
+                $('#confidenceInterval').empty();
+            }
+            
+            // 显示特征重要性（如果有）
+            if (result.feature_importance) {
+                const importanceDiv = $('#importanceChart');
+                importanceDiv.empty();
+                
+                // 创建特征重要性条形图
+                let importanceHtml = '<ul class="list-group">';
+                for (const feature in result.feature_importance) {
+                    const importance = result.feature_importance[feature];
+                    const percent = Math.round(importance * 100);
+                    const barWidth = Math.max(5, percent);
+                    
+                    importanceHtml += `
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>${feature}</span>
+                                <span>${percent}%</span>
+                            </div>
+                            <div class="progress mt-1">
+                                <div class="progress-bar" role="progressbar" style="width: ${barWidth}%" 
+                                    aria-valuenow="${percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </li>
+                    `;
+                }
+                importanceHtml += '</ul>';
+                importanceDiv.html(importanceHtml);
+            }
+            
+            // 显示结果容器
+            $('.result-container').show();
+            
+            // 平滑滚动到结果
+            $('html, body').animate({
+                scrollTop: $('.result-container').offset().top - 50
+            }, 500);
+        }
+        
+        // 显示错误信息
+        function showError(message) {
+            $('.error-message').text(message).show();
+        }
+    </script>
+</body>
+</html>
